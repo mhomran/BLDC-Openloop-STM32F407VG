@@ -402,8 +402,5 @@ void Start_ADC_Conversation(void){
       Desired_PWM_DutyCycle = Temp_DutyCycle;
     }
   }
-  
-	// Update PWM duty cycle values
-
 }
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -47,7 +47,7 @@
 
  #define SYSTEM_FREQ 16000000UL          // (in Hz) System Freq, Timer PWM Time Base
 #define PWM_FREQ 5000                  // (in Hz) PWM Freq for switching the H-Bridge FETs 
-#define TIMER_PWM_PERIOD  400
+#define TIMER_PWM_PERIOD  200
                                         // Timer PWM Counts = System Freq/(2xPWM Freq)
 
 #define SPEEDIN_PWM_FACTOR  4           // Calculate this value and define the constant 
@@ -70,7 +70,7 @@
 #define ADC_SAMPLING_PWM_PERIODS 10   // Every #PWM periods when ADC is sampled
 #define MAIN_PWM_BUCKET_PERCENT 2/10    // (in %age) Resolution by which the PWM dutycycle is 
                                         // incremented/decremented after motor start-up
-#define MAIN_PWM_BUCKET_DC  (TIMER_PWM_PERIOD*MAIN_PWM_BUCKET_PERCENT)/100
+#define MAIN_PWM_BUCKET_DC  5
                                         // PWM dutycycle change resolution in timer counts
 
 //****************************************************************************//
