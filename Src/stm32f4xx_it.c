@@ -254,7 +254,11 @@ void TIM5_IRQHandler(void)
 		SampleADC = 1;
 	}   
 	
-	if (Desired_PWM_DutyCycle > Current_PWM_DutyCycle)
+	if(Current_PWM_DutyCycle < 10 && Desired_PWM_DutyCycle == 0)
+	{
+		Current_PWM_DutyCycle = 0;
+	}
+	else if (Desired_PWM_DutyCycle > Current_PWM_DutyCycle)
 	{
 		// Increment duty cycle or change duty cycle in +VE direction
 		Current_PWM_DutyCycle = Current_PWM_DutyCycle + MAIN_PWM_BUCKET_DC;
@@ -263,6 +267,10 @@ void TIM5_IRQHandler(void)
 	{
 		// Decrement duty cycle or change duty cycle in -VE direction
 		Current_PWM_DutyCycle = Current_PWM_DutyCycle - MAIN_PWM_BUCKET_DC;
+	}
+	else
+	{
+		/* MISRA rule */
 	}
 	
 	// Update PWM duty cycle values

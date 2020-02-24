@@ -391,7 +391,7 @@ void Start_ADC_Conversation(void){
     {
       //TCCR1A &= ~(1 << COM1B1);
       //PORTB &= ~(1 << PINB2);
-      Desired_PWM_DutyCycle = MIN_PWM_DUTYCYCLE;
+      Desired_PWM_DutyCycle = 0;
     } 
     else if (prevADC >= 855){  //to prevent closing the switches fast
       //TCCR1A &= ~(1 << COM1B1);
